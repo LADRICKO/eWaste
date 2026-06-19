@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.M. Odjuvwu Concepts Ltd | Urban Mining & Gold Recovery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#0b7a3b;
+    --secondary:#d4af37;
+    --dark:#1a1a1a;
+    --light:#f8f9fa;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    line-height:1.6;
+    color:#333;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Header */
+header{
+    background:var(--white);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+}
+
+.logo{
+    color:var(--primary);
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:500;
+}
+
+.menu-btn{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+/* Hero */
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    max-width:800px;
+    margin:auto;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+    margin:5px;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-secondary{
+    background:var(--secondary);
+    color:black;
+}
+
+/* Sections */
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    color:var(--primary);
+    font-size:2.2rem;
+}
+
+/* About */
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* Services */
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+/* Process */
+.process{
+    background:#f2f2f2;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    text-align:center;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.step-number{
+    background:var(--primary);
+    color:white;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-bottom:15px;
+}
+
+/* Stats */
+.stats{
+    background:var(--primary);
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.stat h2{
+    font-size:2.5rem;
+}
+
+/* Contact */
+.contact-form{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:5px;
+}
+
+.contact-form button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:12px 25px;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:30px 0;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+.nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:white;
+    padding:20px;
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.menu-btn{
+    display:block;
+}
+
+.hero-content h1{
+    font-size:2rem;
+}
+
+.about-grid{
+    grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+<div class="logo">A.M. ODJUVWU CONCEPTS</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-content">
+<h1>Transforming E-Waste Into Sustainable Wealth</h1>
+
+<p>
+We collect, process and recover precious metals from electronic waste,
+creating sustainable value through urban mining, refining and ethical
+gold products.
+</p>
+
+<a href="#contact" class="btn btn-primary">Request Collection</a>
+<a href="#services" class="btn btn-secondary">Our Services</a>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container">
+<div class="section-title">
+<h2>About Us</h2>
+</div>
+
+<div class="about-grid">
+<div>
+<h3>A Circular Economy Solution</h3>
+
+<p>
+A.M. Odjuvwu Concepts Limited specializes in electronic waste collection,
+precious metal recovery, refining and sustainable jewelry production.
+</p>
+
+<br>
+
+<p>
+Our mission is to reduce environmental pollution while recovering
+valuable resources such as gold, silver and copper from discarded
+electronics.
+</p>
+</div>
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="section-title">
+<h2>Our Services</h2>
+</div>
+
+<div class="services-grid">
+
+<div class="card">
+<h3>E-Waste Collection</h3>
+<p>
+Collection of computers, mobile phones, PCBs, CPUs,
+telecommunication equipment and obsolete electronics.
+</p>
+</div>
+
+<div class="card">
+<h3>Precious Metal Recovery</h3>
+<p>
+Recovery of gold, silver, copper and other valuable metals from
+electronic waste streams.
+</p>
+</div>
+
+<div class="card">
+<h3>Gold Refining</h3>
+<p>
+Refining recovered precious metals to high purity levels for
+commercial and industrial use.
+</p>
+</div>
+
+<div class="card">
+<h3>Sustainable Jewelry</h3>
+<p>
+Crafting environmentally responsible jewelry from recovered
+gold and precious metals.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="process" id="process">
+<div class="container">
+<div class="section-title">
+<h2>Our Recovery Process</h2>
+</div>
+
+<div class="process-grid">
+
+<div class="step">
+<div class="step-number">1</div>
+<h4>Collect</h4>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h4>Sort</h4>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h4>Shred</h4>
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+<h4>Recover</h4>
+</div>
+
+<div class="step">
+<div class="step-number">5</div>
+<h4>Refine</h4>
+</div>
+
+<div class="step">
+<div class="step-number">6</div>
+<h4>Create</h4>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="stats">
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h2>99.99%</h2>
+<p>Gold Purity Target</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Sustainable Focus</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Collection Requests</p>
+</div>
+
+<div class="stat">
+<h2>Global</h2>
+<p>Market Reach</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+
+<div class="section-title">
+<h2>Contact Us</h2>
+</div>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="text" placeholder="Organization">
+
+<textarea rows="5"
+placeholder="Tell us about your e-waste collection needs"></textarea>
+
+<button type="submit">Send Request</button>
+
+</form>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>
+© 2026 A.M. Odjuvwu Concepts Limited |
+Urban Mining & Sustainable Precious Metal Recovery
+</p>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('navLinks').classList.toggle('active');
+}
+
+document.querySelector('form').addEventListener('submit', function(e){
+e.preventDefault();
+alert('Thank you! Your collection request has been received.');
+});
+</script>
+
+</body>
+</html>
